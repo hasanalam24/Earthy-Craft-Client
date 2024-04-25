@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 
 const Login = () => {
 
-    const { SignInUser } = useContext(AppContext)
+    const { SignInUser, googleLogin } = useContext(AppContext)
 
     const handleLogin = e => {
         e.preventDefault()
@@ -24,6 +24,16 @@ const Login = () => {
                 toast.error("Please Enter a Valid Email or Password")
             })
 
+    }
+
+    const handleGoogleLogin = () => {
+        googleLogin()
+            .then(result => {
+                console.log(result.user)
+            })
+            .catch(error => {
+                console.log(error.message)
+            })
     }
 
     return (
@@ -55,7 +65,19 @@ const Login = () => {
                             <button className="btn btn-secondary">Login</button>
                         </div>
                     </form>
+                    <div className="flex gap-5 items-center p-4">
 
+                        <div onClick={() => handleGoogleLogin()} className="w-10 h-10 bg-gray-100 rounded-xl">
+                            <img src="https://i.ibb.co/cLDFfkY/google-logo.png" alt="" />
+
+                        </div>
+
+                        <div onClick={() => handleLogin()} className="w-10 h-10 bg-gray-100 rounded-xl">
+                            <img src="https://i.ibb.co/Mp0sLB2/github-logo.png" alt="" />
+
+                        </div>
+
+                    </div>
                     <div className="flex gap-2 mt-3 mx-auto">
                         <p>Don't have an account? Please</p>
                         <Link className="text-green-600 font-bold" to="/register">
