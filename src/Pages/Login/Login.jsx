@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 
 const Login = () => {
 
-    const { SignInUser, googleLogin } = useContext(AppContext)
+    const { SignInUser, googleLogin, githubLogin } = useContext(AppContext)
 
     const handleLogin = e => {
         e.preventDefault()
@@ -28,6 +28,16 @@ const Login = () => {
 
     const handleGoogleLogin = () => {
         googleLogin()
+            .then(result => {
+                console.log(result.user)
+            })
+            .catch(error => {
+                console.log(error.message)
+            })
+    }
+
+    const handleGitgubLogin = () => {
+        githubLogin()
             .then(result => {
                 console.log(result.user)
             })
@@ -72,7 +82,7 @@ const Login = () => {
 
                         </div>
 
-                        <div onClick={() => handleLogin()} className="w-10 h-10 bg-gray-100 rounded-xl">
+                        <div onClick={() => handleGitgubLogin()} className="w-10 h-10 bg-gray-100 rounded-xl">
                             <img src="https://i.ibb.co/Mp0sLB2/github-logo.png" alt="" />
 
                         </div>

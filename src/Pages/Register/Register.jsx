@@ -17,7 +17,7 @@ const Register = () => {
     } = useForm()
 
     const onSubmit = data => {
-        const { email, password, name, image } = data
+        const { email, password, name, photo } = data
         console.log(data)
 
         if (password.length < 6) {
