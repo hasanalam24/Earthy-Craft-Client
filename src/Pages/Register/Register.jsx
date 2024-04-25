@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form"
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { AppContext } from "../../firebase/AuthProvider";
+import { Link } from "react-router-dom";
 
 const Register = () => {
     const [errorMessage, setErrorMessager] = useState()
@@ -87,6 +88,13 @@ const Register = () => {
                             <button className="btn btn-secondary">Register</button>
                         </div>
                     </form>
+                    <div className="flex gap-2 mt-3 mx-auto">
+                        <p>Already have an account? Please </p>
+                        <Link className="text-green-600 font-bold" to="/login">
+                            Login
+                        </Link>
+                        <p>here</p>
+                    </div>
                 </div>
             </div>
             <ToastContainer />

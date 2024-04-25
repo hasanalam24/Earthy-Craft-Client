@@ -2,6 +2,7 @@ import { useContext, useState } from "react";
 import { AppContext } from "../../firebase/AuthProvider";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { Link } from "react-router-dom";
 
 const Login = () => {
 
@@ -47,14 +48,23 @@ const Login = () => {
                             <input name="password" type="password" placeholder="password" className="input input-bordered" required />
 
                             <label className="label">
-                                <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
+                                <a className="label-text-alt link link-hover">Forgot password?</a>
                             </label>
                         </div>
                         <div className="form-control mt-6">
                             <button className="btn btn-secondary">Login</button>
                         </div>
                     </form>
+                    <div className="flex gap-2 mt-3 mx-auto">
+                        <p>Don't have an account? Please</p>
+                        <Link className="text-green-600 font-bold" to="/register">
+                            Register
+                        </Link>
+                        <p>here</p>
+                    </div>
                 </div>
+
+
             </div>
             <ToastContainer />
         </div>

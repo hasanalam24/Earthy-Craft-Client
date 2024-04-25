@@ -1,7 +1,12 @@
+import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
+import { AppContext } from "../../firebase/AuthProvider";
 
 
 const Navber = () => {
+
+    const { user, SignOutUser } = useContext(AppContext)
+
     const navLinks = <>
 
         <NavLink to="/">
@@ -22,6 +27,12 @@ const Navber = () => {
 
 
     </>
+
+
+    const handleSignOut = () => {
+        SignOutUser()
+    }
+
     return (
         <div className="navbar bg-base-100">
             <div className="navbar-start">
@@ -47,12 +58,20 @@ const Navber = () => {
                 </ul>
             </div>
             <div className="navbar-end flex gap-3 ">
-                <Link to="/login">
-                    <button className="btn btn-primary">Login</button>
-                </Link>
-                <Link to="/register">
-                    <button className="btn btn-secondary">Register</button>
-                </Link>
+                {
+                    user ? <div>
+                        <button onClick={handleSignOut} className="btn btn-secondary">Sign Out</button>
+                    </div>
+                        :
+                        <div>
+                            <Link to="/login">
+                                <button className="btn btn-primary">Login</button>
+                            </Link>
+                            <Link to="/register">
+                                <button className="btn btn-secondary">Register</button>
+                            </Link>
+                        </div>
+                }
             </div>
         </div>
     );
