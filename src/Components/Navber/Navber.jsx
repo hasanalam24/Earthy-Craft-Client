@@ -1,13 +1,24 @@
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 
 const Navber = () => {
     const navLinks = <>
 
-        <Link to="/"> <li><a>Home</a></li></Link>
-        <Link to="/allartcraft"> <li><a>All Art & Craft Items</a></li></Link>
-        <Link to="/addcraft"> <li><a>Add Craft Item</a></li></Link>
-        <Link to="/mycraftlist"> <li><a>My Art & Craft List</a></li></Link>
+        <NavLink to="/">
+            <li className="text-lg font-semibold"><a>Home</a></li>
+        </NavLink>
+
+        <NavLink to="/allartcraft">
+            <li className="text-lg font-semibold"><a>All Art & Craft Items</a></li>
+        </NavLink>
+
+        <NavLink to="/addcraft">
+            <li className="text-lg font-semibold"><a>Add Craft Item</a></li>
+        </NavLink>
+
+        <NavLink to="/mycraftlist">
+            <li className="text-lg font-semibold"><a>My Art & Craft List</a></li>
+        </NavLink>
 
 
     </>
@@ -23,9 +34,9 @@ const Navber = () => {
 
                     </ul>
                 </div>
-                <div className="flex items-center justify-center">
-                    <img className="w-[80px] h-[60px]" src="https://i.ibb.co/YdzGHwB/Logo.png" alt="" />
-                    <a className="btn btn-ghost text-xl">Earthy Craft</a>
+                <div className="flex items-center justify-center ">
+                    <img className="hidden lg:flex lg:w-[80px] h-[60px]" src="https://i.ibb.co/YdzGHwB/Logo.png" alt="" />
+                    <a className="btn -ml-4 btn-ghost text-xl">Earthy Craft</a>
                 </div>
             </div>
             <div className="navbar-center hidden lg:flex">

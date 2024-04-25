@@ -8,12 +8,12 @@ function App() {
 
 
   return (
-    <>
+    <div className='container mx-auto'>
       <Navber></Navber>
       <Outlet></Outlet>
 
       <Footer></Footer>
-    </>
+    </div>
   )
 }
 
