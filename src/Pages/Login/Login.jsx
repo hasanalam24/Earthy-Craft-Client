@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { AppContext } from "../../firebase/AuthProvider";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 const Login = () => {
 
     const { SignInUser } = useContext(AppContext)
-    const [errorMessage, setErrorMessager] = useState()
+
     const handleLogin = e => {
         e.preventDefault()
         const form = e.target;
@@ -55,6 +55,7 @@ const Login = () => {
                             <button className="btn btn-secondary">Login</button>
                         </div>
                     </form>
+
                     <div className="flex gap-2 mt-3 mx-auto">
                         <p>Don't have an account? Please</p>
                         <Link className="text-green-600 font-bold" to="/register">
