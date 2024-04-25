@@ -6,7 +6,7 @@ import { AppContext } from "../../firebase/AuthProvider";
 
 const Register = () => {
     const [errorMessage, setErrorMessager] = useState()
-    const { RegisterUser } = useContext(AppContext)
+    const { SignUpUser } = useContext(AppContext)
 
     const {
         register,
@@ -33,7 +33,7 @@ const Register = () => {
             return;
 
         }
-        RegisterUser(email, password)
+        SignUpUser(email, password)
             .then(result => {
                 toast("Register Successfully")
                 console.log(result.user)
