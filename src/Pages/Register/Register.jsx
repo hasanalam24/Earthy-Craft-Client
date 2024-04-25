@@ -1,10 +1,12 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { useForm } from "react-hook-form"
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { AppContext } from "../../firebase/AuthProvider";
 
 const Register = () => {
     const [errorMessage, setErrorMessager] = useState()
+    const { RegisterUser } = useContext(AppContext)
 
     const {
         register,
@@ -31,11 +33,17 @@ const Register = () => {
             return;
 
         }
+        RegisterUser(email, password)
+            .then(result => {
+                toast("Register Successfully")
+                console.log(result.user)
+            })
+            .catch(error => {
+                console.log(error.message)
+            })
+
 
     }
-
-
-
 
 
     return (
