@@ -1,7 +1,8 @@
 import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AppContext } from "../../firebase/AuthProvider";
-
+import 'react-tooltip/dist/react-tooltip.css'
+import { Tooltip } from 'react-tooltip'
 
 const Navber = () => {
 
@@ -59,7 +60,12 @@ const Navber = () => {
             </div>
             <div className="navbar-end flex gap-3 ">
                 {
-                    user ? <div>
+                    user ? <div className="flex gap-3 items-center justify-center">
+
+                        <img data-tooltip-id="my-tooltip"
+                            data-tooltip-content={user.displayName}
+                            data-tooltip-place="left" className="w-[45px] h-[45px] rounded-full" src={user.photoURL} alt="" />
+                        <Tooltip id="my-tooltip" />
                         <button onClick={handleSignOut} className="btn btn-secondary">Sign Out</button>
                     </div>
                         :
