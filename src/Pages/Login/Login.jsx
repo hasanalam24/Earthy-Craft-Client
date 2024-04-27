@@ -2,11 +2,14 @@ import { useContext } from "react";
 import { AppContext } from "../../firebase/AuthProvider";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 const Login = () => {
 
     const { SignInUser, googleLogin, githubLogin } = useContext(AppContext)
+    const navigate = useNavigate()
+    const location = useLocation()
+
 
     const handleLogin = e => {
         e.preventDefault()
@@ -17,8 +20,11 @@ const Login = () => {
         SignInUser(email, password)
             .then((result) => {
                 console.log(result.user)
-
                 toast("Login Successfully")
+                if (result.user) {
+                    navigate(location?.state || "/")
+                }
+
             })
             .catch(() => {
                 toast.error("Please Enter a Valid Email or Password")
@@ -30,6 +36,8 @@ const Login = () => {
         googleLogin()
             .then(result => {
                 console.log(result.user)
+                toast("Login Successfully")
+                navigate(location?.state || '/')
             })
             .catch(error => {
                 console.log(error.message)
@@ -39,6 +47,8 @@ const Login = () => {
     const handleGitgubLogin = () => {
         githubLogin()
             .then(result => {
+                toast("Login Successfully")
+                navigate(location?.state || '/')
                 console.log(result.user)
             })
             .catch(error => {

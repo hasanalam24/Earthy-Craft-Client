@@ -3,6 +3,7 @@ import { Link, NavLink } from "react-router-dom";
 import { AppContext } from "../../firebase/AuthProvider";
 import 'react-tooltip/dist/react-tooltip.css'
 import { Tooltip } from 'react-tooltip'
+import './Navber.css'
 
 const Navber = () => {
 
@@ -10,21 +11,31 @@ const Navber = () => {
 
     const navLinks = <>
 
-        <NavLink to="/">
-            <li className="text-lg font-semibold"><a>Home</a></li>
+        <NavLink to="/" className="ml-6 p-1">
+            <a className="text-lg font-semibold">Home</a>
         </NavLink>
 
-        <NavLink to="/allartcraft">
-            <li className="text-lg font-semibold"><a>All Art & Craft Items</a></li>
+        <NavLink to="/allartcraft" className="ml-6 p-1">
+            <a className="text-lg font-semibold ">All Art & Craft Items</a>
         </NavLink>
 
-        <NavLink to="/addcraft">
-            <li className="text-lg font-semibold"><a>Add Craft Item</a></li>
+        <NavLink to="/addcraft" className="ml-6 p-1">
+            <a className="text-lg font-semibold ">Add Craft Item</a>
         </NavLink>
 
-        <NavLink to="/mycraftlist">
-            <li className="text-lg font-semibold"><a>My Art & Craft List</a></li>
+        <NavLink to="/mycraftlist" className="ml-6 p-1">
+            <a className="text-lg font-semibold">My Art & Craft List</a>
         </NavLink>
+
+        {
+            user && <> <NavLink to="/register" className="ml-6 p-1">
+                <a className="text-lg font-semibold">Register</a>
+            </NavLink>
+                <NavLink to="/login" className="ml-6 p-1">
+                    <a className="text-lg font-semibold">Login</a>
+                </NavLink>
+            </>
+        }
 
 
 

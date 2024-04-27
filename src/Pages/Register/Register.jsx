@@ -3,12 +3,12 @@ import { useForm } from "react-hook-form"
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { AppContext } from "../../firebase/AuthProvider";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Register = () => {
     const [errorMessage, setErrorMessager] = useState()
     const { SignUpUser } = useContext(AppContext)
-
+    // const navigate = useNavigate()
     const {
         register,
         handleSubmit,
@@ -38,6 +38,12 @@ const Register = () => {
             .then(result => {
                 toast("Register Successfully")
                 console.log(result.user)
+                // updatedProfile(name, photo)
+                //     .then(() => {
+                //         SignOutUser()
+                //         navigate("/login")
+
+                //     })
             })
             .catch(error => {
                 console.log(error.message)

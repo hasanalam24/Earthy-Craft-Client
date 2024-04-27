@@ -13,6 +13,7 @@ import MyCraftList from './Pages/MyCraftList/MyCraftList.jsx';
 import Login from './Pages/Login/Login.jsx';
 import Register from './Pages/Register/Register.jsx';
 import AuthProvider from './firebase/AuthProvider.jsx';
+import ProtectedRoute from './Components/ProtectedRoute/ProtectedRoute.jsx';
 
 
 const router = createBrowserRouter([
@@ -30,11 +31,15 @@ const router = createBrowserRouter([
       },
       {
         path: '/addcraft',
-        element: <AddCraft></AddCraft>
+        element: <ProtectedRoute>
+          <AddCraft></AddCraft>
+        </ProtectedRoute>
       },
       {
         path: '/mycraftlist',
-        element: <MyCraftList></MyCraftList>
+        element: <ProtectedRoute>
+          <MyCraftList></MyCraftList>
+        </ProtectedRoute>
       },
       {
         path: '/login',
