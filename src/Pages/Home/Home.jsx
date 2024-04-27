@@ -11,10 +11,13 @@ import './Style.css';
 
 // import required modules
 import { EffectFade, Navigation, Pagination } from 'swiper/modules';
+import { useLoaderData } from 'react-router-dom';
+import HomeCard from '../../Components/HomeCard/HomeCard';
 
 
 const Home = () => {
 
+    const allCrafts = useLoaderData()
 
     return (
         <div>
@@ -116,46 +119,14 @@ const Home = () => {
                 </SwiperSlide>
             </Swiper>
 
-            {/* categories items
-            <Swiper
-                slidesPerView={4}
-                centeredSlides={true}
-                spaceBetween={30}
-                grabCursor={true}
-                pagination={{
-                    clickable: true,
-                }}
-                modules={[Pagination]}
-                className="mySwiper mt-10"
-            >
-                <SwiperSlide className='p-4'>
-                    <img className='w-[200px] h-[200px]' src="https://i.ibb.co/hm5x5qX/chastity-cortijo-98-WE9h-WWji-Q-unsplash.jpg" />
-                </SwiperSlide>
-                <SwiperSlide className='p-4'>
-                    <img src="https://i.ibb.co/hm5x5qX/chastity-cortijo-98-WE9h-WWji-Q-unsplash.jpg" />
-                </SwiperSlide>
-                <SwiperSlide className='p-4'>
-                    <img src="https://i.ibb.co/hm5x5qX/chastity-cortijo-98-WE9h-WWji-Q-unsplash.jpg" />
-                </SwiperSlide>
-                <SwiperSlide className='p-4'>
-                    <img src="https://i.ibb.co/hm5x5qX/chastity-cortijo-98-WE9h-WWji-Q-unsplash.jpg" />
-                </SwiperSlide>
-                <SwiperSlide className='p-4'>
-                    <img src="https://i.ibb.co/hm5x5qX/chastity-cortijo-98-WE9h-WWji-Q-unsplash.jpg" />
-                </SwiperSlide>
-                <SwiperSlide>
-                    <img src="https://i.ibb.co/hm5x5qX/chastity-cortijo-98-WE9h-WWji-Q-unsplash.jpg" />
-                </SwiperSlide>
-                <SwiperSlide className='p-4'>
-                    <img src="https://i.ibb.co/hm5x5qX/chastity-cortijo-98-WE9h-WWji-Q-unsplash.jpg" />
-                </SwiperSlide>
-                <SwiperSlide className='p-4'>
-                    <img src="https://i.ibb.co/hm5x5qX/chastity-cortijo-98-WE9h-WWji-Q-unsplash.jpg" />
-                </SwiperSlide>
-                <SwiperSlide className='p-4'>
-                    <img src="https://i.ibb.co/hm5x5qX/chastity-cortijo-98-WE9h-WWji-Q-unsplash.jpg" />
-                </SwiperSlide>
-            </Swiper> */}
+            {/* homeSixcard */}
+            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>
+
+                {
+                    allCrafts.slice(0, 6).map(craft => <HomeCard craft={craft} key={craft._id}></HomeCard>)
+                }
+            </div>
+
         </div >
     );
 };

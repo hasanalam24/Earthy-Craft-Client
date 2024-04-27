@@ -60,7 +60,7 @@ const Navber = () => {
                 </div>
                 <div className="flex items-center justify-center ">
                     <img className="hidden lg:flex lg:w-[80px] h-[60px]" src="https://i.ibb.co/YdzGHwB/Logo.png" alt="" />
-                    <a className="btn -ml-4 btn-ghost text-xl">Earthy Craft</a>
+                    <a className="btn -ml-4 btn-ghost text-xl">Earthy Paint</a>
                 </div>
             </div>
             <div className="navbar-center hidden lg:flex">

@@ -1,5 +1,12 @@
+import { useContext } from 'react';
 import Swal from 'sweetalert2'
+import { AppContext } from '../../firebase/AuthProvider';
+
+
 const AddCraft = () => {
+
+    const { user } = useContext(AppContext)
+
     const handleAddCraft = e => {
         e.preventDefault()
         const form = e.target
@@ -98,14 +105,14 @@ const AddCraft = () => {
                             <label className="label">
                                 <span className="label-text">Email</span>
                             </label>
-                            <input name="email" type="email" placeholder="Email" className="input input-bordered" required />
+                            <input name="email" type="email" placeholder="Email" defaultValue={user?.email} className="input input-bordered" required />
 
                         </div>
                         <div className="form-control">
                             <label className="label">
                                 <span className="label-text">Your Name</span>
                             </label>
-                            <input name="user_name" type="text" placeholder="Your Name" className="input input-bordered" required />
+                            <input name="user_name" type="text" defaultValue={user?.displayName} placeholder="Your Name" className="input input-bordered" required />
 
                         </div>
 
