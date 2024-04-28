@@ -6,12 +6,12 @@ import { getAuth } from "firebase/auth";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-    apiKey: import.meta.evn.VITE_APIKEY,
-    authDomain: import.meta.evn.VITE_AUTHDOMAIN,
-    projectId: import.meta.evn.VITE_PROJECTID,
-    storageBucket: import.meta.evn.VITE_STORAGEBUCKET,
-    messagingSenderId: import.meta.evn.VITE_MESSAGINGSENDERID,
-    appId: import.meta.evn.VITE_APPID
+    apiKey: "AIzaSyDD_JHN_xSawjTRwfopNzhdUzfdD67SC80",
+    authDomain: "earthy-art-and-craft.firebaseapp.com",
+    projectId: "earthy-art-and-craft",
+    storageBucket: "earthy-art-and-craft.appspot.com",
+    messagingSenderId: "249537423634",
+    appId: "1:249537423634:web:2666b8800298c57f90abcb"
 };
 
 // Initialize Firebase
