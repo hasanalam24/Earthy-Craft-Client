@@ -39,8 +39,7 @@ const Register = () => {
             .then(result => {
                 toast("Register Successfully")
                 console.log(result.user)
-                // SignOutUser()
-                // navigate("/login")
+
                 updatedUserProfile(result.user, name, photo)
                     .then(() => {
                         SignOutUser()

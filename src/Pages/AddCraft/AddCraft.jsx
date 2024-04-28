@@ -16,13 +16,13 @@ const AddCraft = () => {
         const shortDescription = form.short_description.value
         const price = form.price.value
         const rating = form.rating.value
-
-
         const customization = form.customization.value
         const email = form.email.value
         const userName = form.user_name.value
+        const processingTime = form.processing_time.value
+        const stockStatus = form.stockStatus.value
 
-        const addCraftValue = { itemName, subCategory, image, shortDescription, price, rating, customization, email, userName }
+        const addCraftValue = { itemName, subCategory, image, shortDescription, price, rating, customization, email, userName, processingTime, stockStatus }
 
         console.log(addCraftValue)
 
@@ -84,9 +84,9 @@ const AddCraft = () => {
                             </div>
                             <div className="flex-1">
                                 <label className="label">
-                                    <span className="label-text text-white font-semibold">Short Description</span>
+                                    <span className="label-text text-white font-semibold">Processing Time</span>
                                 </label>
-                                <input name="short_description" type="text" placeholder="Short Description" className="input input-bordered w-full" required />
+                                <input name="processing_time" type="text" placeholder="Processing Time" className="input input-bordered w-full" required />
 
                             </div>
                         </div>
@@ -120,12 +120,33 @@ const AddCraft = () => {
 
                         <div className='flex gap-5 items-center justify-center'>
                             <div className="flex-1">
+                                <select className=' border-2 p-3 rounded-lg mt-5 w-full' name="customization" id="">
+                                    <option selected disabled>Customization</option>
+                                    <option value="Yes">Yes</option>
+                                    <option value="No">No</option>
+
+                                </select>
+                            </div>
+                            <div className="flex-1">
+                                <select className=' border-2 p-3 rounded-lg mt-5 w-full' name="stockStatus" id="">
+                                    <option selected disabled>Stock Status</option>
+                                    <option value="InStock">InStock</option>
+                                    <option value="Made in Order">Made in Order</option>
+
+                                </select>
+                            </div>
+                        </div>
+
+                        <div className='flex gap-5 items-center justify-center'>
+                            <div className="flex-1">
                                 <label className="label">
-                                    <span className="label-text text-white font-semibold">Customization</span>
+                                    <span className="label-text text-white font-semibold">Short Description</span>
                                 </label>
-                                <input name="customization" type="text" placeholder="YES or NO" className="input input-bordered w-full" required />
+                                <input name="short_description" type="text" placeholder="Short Description" className="input input-bordered w-full" required />
 
                             </div>
+                        </div>
+                        <div className='flex gap-5 items-center justify-center'>
                             <div className="flex-1">
                                 <label className="label">
                                     <span className="label-text text-white font-semibold">Email</span>
@@ -133,14 +154,16 @@ const AddCraft = () => {
                                 <input name="email" type="email" placeholder="Email" defaultValue={user?.email} className="input input-bordered w-full" required />
 
                             </div>
-                        </div>
-                        <div className="form-control">
-                            <label className="label">
-                                <span className="label-text text-white font-semibold">Your Name</span>
-                            </label>
-                            <input name="user_name" type="text" defaultValue={user?.displayName} placeholder="Your Name" className="input input-bordered" required />
+                            <div className="flex-1">
+                                <label className="label">
+                                    <span className="label-text text-white font-semibold">Your Name</span>
+                                </label>
+                                <input name="user_name" type="text" defaultValue={user?.displayName} placeholder="Your Name" className="input input-bordered w-full" required />
+
+                            </div>
 
                         </div>
+
 
                         <div className="form-control mt-6">
                             <button className="btn btn-primary">Add Craft</button>
