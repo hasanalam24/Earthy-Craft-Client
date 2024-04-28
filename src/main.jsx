@@ -15,6 +15,7 @@ import Register from './Pages/Register/Register.jsx';
 import AuthProvider from './firebase/AuthProvider.jsx';
 import ProtectedRoute from './Components/ProtectedRoute/ProtectedRoute.jsx';
 import ErrorPage from './Components/ErrorElement/ErrorPage.jsx';
+import ViewDetails from './Pages/ViewDetails/ViewDetails.jsx';
 
 
 const router = createBrowserRouter([
@@ -53,7 +54,14 @@ const router = createBrowserRouter([
       {
         path: '/register',
         element: <Register></Register>
-      }
+      },
+      {
+        path: '/viewDetails/:id',
+        element: <ProtectedRoute>
+          <ViewDetails></ViewDetails>
+        </ProtectedRoute>,
+        loader: ({ params }) => fetch(`http://localhost:5000//viewDetails/${params.id}`)
+      },
     ]
   },
 ]);

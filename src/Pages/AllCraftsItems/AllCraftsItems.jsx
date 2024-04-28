@@ -29,7 +29,7 @@ const AllCraftsItems = () => {
                                 <td>{craft.rating}</td>
                                 <td>{craft.stockStatus}</td>
                                 <td>
-                                    <Link to="/viewDetails">
+                                    <Link to={`/viewDetails/${craft._id}`}>
                                         <h3 className="text-purple-700">View Details</h3>
                                     </Link>
                                 </td>
