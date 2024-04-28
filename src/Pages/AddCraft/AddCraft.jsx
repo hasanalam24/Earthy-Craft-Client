@@ -69,7 +69,7 @@ const AddCraft = () => {
                                 <label className="label">
                                     <span className="label-text text-white font-semibold">Price</span>
                                 </label>
-                                <input name="price" type="text" placeholder="Price" className="input input-bordered w-full" required />
+                                <input name="price" type="text" defaultValue="$" placeholder="Price" className="input input-bordered w-full" required />
 
                             </div>
 
@@ -95,12 +95,12 @@ const AddCraft = () => {
 
                                 <select className=' border-2 p-3 rounded-lg mt-5 w-full' name="subCategory" id="">
                                     <option selected disabled>Selected a Category</option>
-                                    <option value="LandscapePainting">Landscape Painting</option>
-                                    <option value="PortraitDrawing">Portrait Drawing</option>
-                                    <option value="WatercolourPainting">Watercolour Painting</option>
-                                    <option value="OilPainting">Oil Painting </option>
-                                    <option value="CharcoalSketching">Charcoal Sketching</option>
-                                    <option value="CartoonDrawing">Cartoon Drawing:</option>
+                                    <option value="Landscape Painting">Landscape Painting</option>
+                                    <option value="Portrait Drawing">Portrait Drawing</option>
+                                    <option value="Watercolour Painting">Watercolour Painting</option>
+                                    <option value="Oil Painting">Oil Painting </option>
+                                    <option value="Charcoal Sketching">Charcoal Sketching</option>
+                                    <option value="Cartoon Drawing">Cartoon Drawing:</option>
                                 </select>
 
                             </div>
@@ -130,7 +130,7 @@ const AddCraft = () => {
                             <div className="flex-1">
                                 <select className=' border-2 p-3 rounded-lg mt-5 w-full' name="stockStatus" id="">
                                     <option selected disabled>Stock Status</option>
-                                    <option value="InStock">InStock</option>
+                                    <option value="In Stock">InStock</option>
                                     <option value="Made in Order">Made in Order</option>
 
                                 </select>

@@ -1,26 +1,47 @@
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 
 const AllCraftsItems = () => {
 
     const allCrafts = useLoaderData()
     // console.log(allCrafts)
     return (
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-5">
+        <div className="">
 
-            {
-                allCrafts.map(craft =>
-                    <div key={craft._id} className="card card-compact w-96 bg-base-100 shadow-xl">
-                        <figure><img className="w-[385px] h-[250px]" src={craft.image} alt="Shoes" /></figure>
-                        <div className="card-body">
-                            <h2 className="card-title">{craft.subCategory}</h2>
-                            <p>If a dog chews shoes whose shoes does he choose?</p>
-                            <div className="card-actions justify-end">
-                                <button className="btn btn-primary">Buy Now</button>
-                            </div>
-                        </div>
-                    </div>
-                )
-            }
+            <div className="overflow-x-auto">
+                <table className="table">
+                    {/* head */}
+                    <thead>
+                        <tr>
+                            <th>Photo</th>
+                            <th>Item Name</th>
+                            <th>Rating</th>
+                            <th>Stock Status</th>
+                            <th>Info More</th>
+                        </tr>
+                    </thead>
+                    {
+                        allCrafts.map(craft => <tbody key={craft._id}>
+                            <tr className="bg-base-200">
+                                <th>
+                                    <img className="w-[20px] h-[20px]" src={craft.image} alt="" />
+                                </th>
+                                <td>{craft.itemName}</td>
+                                <td>{craft.rating}</td>
+                                <td>{craft.stockStatus}</td>
+                                <td>
+                                    <Link>
+                                        <button className="btn btn-secondary">View Details</button>
+                                    </Link>
+                                </td>
+                            </tr>
+                            <div className="divider"></div>
+                        </tbody>)
+                    }
+
+                </table>
+            </div>
+
+            {/* table */}
 
 
         </div>
