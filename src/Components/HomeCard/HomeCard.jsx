@@ -1,4 +1,4 @@
-
+// Import Swiper styles
 
 const HomeCard = ({ craft }) => {
     console.log(craft)
@@ -15,50 +15,6 @@ const HomeCard = ({ craft }) => {
                 </div>
             </div>
 
-
-
-
-
-
-            {/* <Swiper
-                slidesPerView={4}
-                centeredSlides={true}
-                spaceBetween={30}
-                grabCursor={true}
-                pagination={{
-                    clickable: true,
-                }}
-                modules={[Pagination]}
-                className="mySwiper mt-10"
-            >
-                <SwiperSlide className='p-4'>
-                    <img className='w-[200px] h-[200px]' src="https://i.ibb.co/hm5x5qX/chastity-cortijo-98-WE9h-WWji-Q-unsplash.jpg" />
-                </SwiperSlide>
-                <SwiperSlide className='p-4'>
-                    <img src="https://i.ibb.co/hm5x5qX/chastity-cortijo-98-WE9h-WWji-Q-unsplash.jpg" />
-                </SwiperSlide>
-                <SwiperSlide className='p-4'>
-                    <img src="https://i.ibb.co/hm5x5qX/chastity-cortijo-98-WE9h-WWji-Q-unsplash.jpg" />
-                </SwiperSlide>
-                <SwiperSlide className='p-4'>
-                    <img src="https://i.ibb.co/hm5x5qX/chastity-cortijo-98-WE9h-WWji-Q-unsplash.jpg" />
-                </SwiperSlide>
-                <SwiperSlide className='p-4'>
-                    <img src="https://i.ibb.co/hm5x5qX/chastity-cortijo-98-WE9h-WWji-Q-unsplash.jpg" />
-                </SwiperSlide>
-                <SwiperSlide>
-                    <img src="https://i.ibb.co/hm5x5qX/chastity-cortijo-98-WE9h-WWji-Q-unsplash.jpg" />
-                </SwiperSlide>
-                <SwiperSlide className='p-4'>
-                    <img src="https://i.ibb.co/hm5x5qX/chastity-cortijo-98-WE9h-WWji-Q-unsplash.jpg" />
-                </SwiperSlide>
-                <SwiperSlide className='p-4'>
-                    <img src="https://i.ibb.co/hm5x5qX/chastity-cortijo-98-WE9h-WWji-Q-unsplash.jpg" />
-                </SwiperSlide>
-                <SwiperSlide className='p-4'>
-                    <img src="https://i.ibb.co/hm5x5qX/chastity-cortijo-98-WE9h-WWji-Q-unsplash.jpg" />
-                </SwiperSlide>
-            </Swiper>  */}
         </div>
     );
 };
