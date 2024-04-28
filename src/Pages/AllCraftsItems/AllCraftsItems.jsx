@@ -7,8 +7,8 @@ const AllCraftsItems = () => {
     return (
         <div className="">
 
-            <div className="overflow-x-auto">
-                <table className="table">
+            <div className="overflow-x-auto ">
+                <table className="table w-[90%] mx-auto">
                     {/* head */}
                     <thead>
                         <tr>
@@ -23,18 +23,18 @@ const AllCraftsItems = () => {
                         allCrafts.map(craft => <tbody key={craft._id}>
                             <tr className="bg-base-200">
                                 <th>
-                                    <img className="w-[20px] h-[20px]" src={craft.image} alt="" />
+                                    <img className="w-[30px] h-[30px]" src={craft.image} alt="" />
                                 </th>
                                 <td>{craft.itemName}</td>
                                 <td>{craft.rating}</td>
                                 <td>{craft.stockStatus}</td>
                                 <td>
-                                    <Link>
-                                        <button className="btn btn-secondary">View Details</button>
+                                    <Link to="/viewDetails">
+                                        <h3 className="text-purple-700">View Details</h3>
                                     </Link>
                                 </td>
                             </tr>
-                            <div className="divider"></div>
+                            <br />
                         </tbody>)
                     }
 
