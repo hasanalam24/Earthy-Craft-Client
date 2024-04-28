@@ -16,13 +16,13 @@ const AddCraft = () => {
         const shortDescription = form.short_description.value
         const price = form.price.value
         const rating = form.rating.value
-        const rating2 = form.rating2.value
+
 
         const customization = form.customization.value
         const email = form.email.value
         const userName = form.user_name.value
 
-        const addCraftValue = { rating2, itemName, subCategory, image, shortDescription, price, rating, customization, email, userName }
+        const addCraftValue = { itemName, subCategory, image, shortDescription, price, rating, customization, email, userName }
 
         console.log(addCraftValue)
 

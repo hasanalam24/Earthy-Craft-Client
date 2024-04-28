@@ -8,7 +8,7 @@ import { Link, useNavigate } from "react-router-dom";
 
 const Register = () => {
     const [errorMessage, setErrorMessager] = useState()
-    const { SignUpUser, SignOutUser } = useContext(AppContext)
+    const { SignUpUser, SignOutUser, updatedUserProfile } = useContext(AppContext)
     const navigate = useNavigate()
     const {
         register,
@@ -18,7 +18,7 @@ const Register = () => {
     } = useForm()
 
     const onSubmit = data => {
-        const { email, password } = data
+        const { email, password, photo, name } = data
         console.log(data)
 
         if (password.length < 6) {
@@ -39,14 +39,15 @@ const Register = () => {
             .then(result => {
                 toast("Register Successfully")
                 console.log(result.user)
-                SignOutUser()
-                navigate("/login")
-                // updatedUserProfile(name, photo)
-                //     .then(() => {
-                //         SignOutUser()
-                //         navigate("/login")
+                // SignOutUser()
+                // navigate("/login")
+                updatedUserProfile(result.user, name, photo)
+                    .then(() => {
+                        SignOutUser()
+                        navigate("/login")
 
-                //     })
+
+                    })
             })
             .catch(error => {
                 console.log(error.message)

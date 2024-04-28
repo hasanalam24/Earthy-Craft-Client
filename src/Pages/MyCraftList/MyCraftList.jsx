@@ -7,11 +7,11 @@ import { AppContext } from "../../firebase/AuthProvider";
 const MyCraftList = () => {
 
     const { user } = useContext(AppContext) || {}
-    const [myCartData, setMyCartData] = useState()
-
-
+    const [myCartData, setMyCartData] = useState([])
 
     console.log(myCartData)
+
+
     useEffect(() => {
         fetch(`http://localhost:5000/myCart/${user?.email}`)
             .then(res => res.json())
@@ -25,7 +25,7 @@ const MyCraftList = () => {
         <div>
             <h1>My all Craft List</h1>
 
-            {/* {
+            {
                 myCartData.map(cartData => <div key={cartData._id} className="card card-compact w-96 bg-base-100 shadow-xl">
                     <figure><img src={cartData?.image} alt="Shoes" /></figure>
                     <div className="card-body">
@@ -36,7 +36,7 @@ const MyCraftList = () => {
                         </div>
                     </div>
                 </div>)
-            } */}
+            }
         </div>
     );
 };

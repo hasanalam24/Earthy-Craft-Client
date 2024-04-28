@@ -43,12 +43,12 @@ const AuthProvider = ({ children }) => {
 
 
     // update Profile
-    // const updatedUserProfile = (name, photo) => {
-    //     return updateProfile(auth.currentUser, {
-    //         displayName: name,
-    //         photoURL: photo
-    //     })
-    // }
+    const updatedUserProfile = (user, name, photo) => {
+        return updateProfile(user, {
+            displayName: name,
+            photoURL: photo
+        })
+    }
 
     //observe auth state change 
     useEffect(() => {
@@ -70,6 +70,7 @@ const AuthProvider = ({ children }) => {
         googleLogin,
         githubLogin,
         loading,
+        updatedUserProfile
 
 
     }
