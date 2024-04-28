@@ -3,6 +3,7 @@
 import { useContext, useEffect, useState } from "react";
 import { AppContext } from "../../firebase/AuthProvider";
 import Swal from "sweetalert2";
+import { Link } from "react-router-dom";
 
 
 const MyCraftList = () => {
@@ -66,11 +67,13 @@ const MyCraftList = () => {
                 myCartData.map(cartData => <div key={cartData._id} className="card card-compact w-96 bg-base-100 shadow-xl">
                     <figure><img src={cartData?.image} alt="Shoes" /></figure>
                     <div className="card-body">
-                        <h2 className="card-title">Shoes!</h2>
+                        <h2 className="card-title">{cartData.itemName}</h2>
                         <p>If a dog chews shoes whose shoes does he choose?</p>
                         <div className="card-actions flex gap-3">
                             <button onClick={() => handleDeleted(cartData._id)} className="btn btn-primary">Delete</button>
-                            <button className="btn btn-primary">Updated</button>
+                            <Link to={`/updatedInfo/${cartData._id}`}>
+                                <button className="btn btn-primary">Updated</button>
+                            </Link>
                         </div>
                     </div>
                 </div>)

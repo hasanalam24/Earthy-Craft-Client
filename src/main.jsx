@@ -16,6 +16,7 @@ import AuthProvider from './firebase/AuthProvider.jsx';
 import ProtectedRoute from './Components/ProtectedRoute/ProtectedRoute.jsx';
 import ErrorPage from './Components/ErrorElement/ErrorPage.jsx';
 import ViewDetails from './Pages/ViewDetails/ViewDetails.jsx';
+import UpdatedData from './Pages/UpdatedData/UpdatedData.jsx';
 
 
 const router = createBrowserRouter([
@@ -46,6 +47,11 @@ const router = createBrowserRouter([
           <MyCraftList></MyCraftList>
         </ProtectedRoute>,
 
+      },
+      {
+        path: '/updatedInfo/:id',
+        element: <UpdatedData></UpdatedData>,
+        loader: ({ params }) => fetch(`http://localhost:5000/addcraft/${params.id}`)
       },
       {
         path: '/login',
