@@ -5,10 +5,11 @@ import 'react-toastify/dist/ReactToastify.css';
 import { AppContext } from "../../firebase/AuthProvider";
 import { Link, useNavigate } from "react-router-dom";
 
+
 const Register = () => {
     const [errorMessage, setErrorMessager] = useState()
-    const { SignUpUser } = useContext(AppContext)
-    // const navigate = useNavigate()
+    const { SignUpUser, SignOutUser } = useContext(AppContext)
+    const navigate = useNavigate()
     const {
         register,
         handleSubmit,
@@ -17,7 +18,7 @@ const Register = () => {
     } = useForm()
 
     const onSubmit = data => {
-        const { email, password, name, photo } = data
+        const { email, password } = data
         console.log(data)
 
         if (password.length < 6) {
@@ -38,7 +39,9 @@ const Register = () => {
             .then(result => {
                 toast("Register Successfully")
                 console.log(result.user)
-                // updatedProfile(name, photo)
+                SignOutUser()
+                navigate("/login")
+                // updatedUserProfile(name, photo)
                 //     .then(() => {
                 //         SignOutUser()
                 //         navigate("/login")
