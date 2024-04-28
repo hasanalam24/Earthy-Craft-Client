@@ -41,7 +41,8 @@ const router = createBrowserRouter([
         path: '/mycraftlist',
         element: <ProtectedRoute>
           <MyCraftList></MyCraftList>
-        </ProtectedRoute>
+        </ProtectedRoute>,
+        // loader: ({ params }) => fetch(`http://localhost:5000/addcraft/${params.email}`)
       },
       {
         path: '/login',

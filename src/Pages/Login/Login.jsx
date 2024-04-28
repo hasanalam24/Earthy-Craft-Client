@@ -21,9 +21,27 @@ const Login = () => {
             .then((result) => {
                 console.log(result.user)
                 toast("Login Successfully")
+                const user = {
+                    email,
+                    lastLoggedAt: result.user?.metadata?.lastSignInTime
+
+
+                }
+                fetch('http://localhost:5000/addcraft', {
+                    method: 'PATCH',
+                    headers: {
+                        'content-type': 'application/json'
+                    },
+                    body: JSON.stringify(user)
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        console.log(data)
+                    })
                 if (result.user) {
                     navigate(location?.state || "/")
                 }
+
 
             })
             .catch(() => {
