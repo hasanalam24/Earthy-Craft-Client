@@ -14,12 +14,14 @@ import Login from './Pages/Login/Login.jsx';
 import Register from './Pages/Register/Register.jsx';
 import AuthProvider from './firebase/AuthProvider.jsx';
 import ProtectedRoute from './Components/ProtectedRoute/ProtectedRoute.jsx';
+import ErrorPage from './Components/ErrorElement/ErrorPage.jsx';
 
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App></App>,
+    errorElement: <ErrorPage></ErrorPage>,
     children: [
       {
         path: '/',

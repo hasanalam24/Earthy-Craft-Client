@@ -19,24 +19,17 @@ const Navber = () => {
             <a className="text-lg font-semibold ">All Art & Craft Items</a>
         </NavLink>
 
-        <NavLink to="/addcraft" className="ml-6 p-1">
-            <a className="text-lg font-semibold ">Add Craft Item</a>
-        </NavLink>
-
-        <NavLink to="/mycraftlist" className="ml-6 p-1">
-            <a className="text-lg font-semibold">My Art & Craft List</a>
-        </NavLink>
-
         {
-            user && <> <NavLink to="/register" className="ml-6 p-1">
-                <a className="text-lg font-semibold">Register</a>
-            </NavLink>
-                <NavLink to="/login" className="ml-6 p-1">
-                    <a className="text-lg font-semibold">Login</a>
+            user && <>
+                <NavLink to="/addcraft" className="ml-6 p-1">
+                    <a className="text-lg font-semibold ">Add Craft Item</a>
+                </NavLink>
+
+                <NavLink to="/mycraftlist" className="ml-6 p-1">
+                    <a className="text-lg font-semibold">My Craft List</a>
                 </NavLink>
             </>
         }
-
 
 
     </>
