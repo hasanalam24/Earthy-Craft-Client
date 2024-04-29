@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import { useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
 
@@ -48,6 +49,10 @@ const UpdatedData = () => {
     }
     return (
         <div className=" relative">
+            <Helmet>
+                <title>EP || Updated Craft</title>
+
+            </Helmet>
             <div>
                 <img className='w-full h-[700px]' src="https://i.ibb.co/g9sdLg6/john-wilson-n-Qtuv9-JTz-Ys-unsplash.jpg" alt="" />
             </div>

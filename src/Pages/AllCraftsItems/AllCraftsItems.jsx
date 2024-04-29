@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import { Link, useLoaderData } from "react-router-dom";
 
 const AllCraftsItems = () => {
@@ -6,7 +7,10 @@ const AllCraftsItems = () => {
     // console.log(allCrafts)
     return (
         <div className="">
+            <Helmet>
+                <title>EP || All Craft Items</title>
 
+            </Helmet>
             <div className="overflow-x-auto ">
                 <table className="table w-[90%] mx-auto">
                     {/* head */}

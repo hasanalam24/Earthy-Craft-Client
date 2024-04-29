@@ -16,16 +16,20 @@ import './Style.css';
 import { EffectFade, Navigation, Pagination } from 'swiper/modules';
 import { useLoaderData } from 'react-router-dom';
 import HomeCard from '../../Components/HomeCard/HomeCard';
-import AnotherCollection from '../../Components/AnotherCollection/AnotherCollection';
+import { Helmet } from 'react-helmet-async';
+
 
 
 const Home = () => {
 
     const allCrafts = useLoaderData()
-
+    console.log(allCrafts)
     return (
         <div>
+            <Helmet>
+                <title>EP || Home</title>
 
+            </Helmet>
 
             <Swiper
                 spaceBetween={30}
@@ -177,7 +181,7 @@ const Home = () => {
             <div className='mt-10 mb-10'>
                 <h1 className="border-l-2 border-l-orange-600 pl-4 text-xl font-semibold mb-5">Categories</h1>
 
-                {/* <AnotherCollection></AnotherCollection> */}
+
             </div>
         </div >
     );

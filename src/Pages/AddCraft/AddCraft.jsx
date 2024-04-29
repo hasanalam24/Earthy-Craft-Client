@@ -1,6 +1,7 @@
 import { useContext } from 'react';
 import Swal from 'sweetalert2'
 import { AppContext } from '../../firebase/AuthProvider';
+import { Helmet } from 'react-helmet-async';
 
 
 const AddCraft = () => {
@@ -48,6 +49,10 @@ const AddCraft = () => {
     }
     return (
         <div className=" relative">
+            <Helmet>
+                <title>EP || Add Craft</title>
+
+            </Helmet>
             <div>
                 <img className='w-full h-[700px]' src="https://i.ibb.co/g9sdLg6/john-wilson-n-Qtuv9-JTz-Ys-unsplash.jpg" alt="" />
             </div>

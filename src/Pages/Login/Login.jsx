@@ -3,6 +3,7 @@ import { AppContext } from "../../firebase/AuthProvider";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 
 const Login = () => {
 
@@ -76,6 +77,10 @@ const Login = () => {
 
     return (
         <div className=" min-h-screen bg-base-200 mb-8">
+            <Helmet>
+                <title>EP || Login</title>
+
+            </Helmet>
             <div className="hero-content flex-col w-[85%] lg:w-1/2 mx-auto">
                 <div className="text-center lg:text-left mt-5">
                     <h1 className="text-3xl lg:text-5xl font-bold">Login now!</h1>

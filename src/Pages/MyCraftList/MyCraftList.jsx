@@ -4,6 +4,7 @@ import { useContext, useEffect, useState } from "react";
 import { AppContext } from "../../firebase/AuthProvider";
 import Swal from "sweetalert2";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 
 
 const MyCraftList = () => {
@@ -61,7 +62,10 @@ const MyCraftList = () => {
 
     return (
         <div>
+            <Helmet>
+                <title>EP || My Craft List</title>
 
+            </Helmet>
 
             {
                 myCartData.map(cartData => <div key={cartData._id} className="card card-compact w-96 bg-base-100 shadow-xl">

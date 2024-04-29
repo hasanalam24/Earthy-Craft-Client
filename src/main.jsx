@@ -17,6 +17,7 @@ import ProtectedRoute from './Components/ProtectedRoute/ProtectedRoute.jsx';
 import ErrorPage from './Components/ErrorElement/ErrorPage.jsx';
 import ViewDetails from './Pages/ViewDetails/ViewDetails.jsx';
 import UpdatedData from './Pages/UpdatedData/UpdatedData.jsx';
+import { HelmetProvider } from 'react-helmet-async';
 
 
 const router = createBrowserRouter([
@@ -75,8 +76,10 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <AuthProvider>
-      <RouterProvider router={router} />
-    </AuthProvider>
+    <HelmetProvider>
+      <AuthProvider>
+        <RouterProvider router={router} />
+      </AuthProvider>
+    </HelmetProvider>
   </React.StrictMode>,
 )
