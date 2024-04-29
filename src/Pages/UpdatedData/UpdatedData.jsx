@@ -27,7 +27,7 @@ const UpdatedData = () => {
 
         console.log(updatedItemCart)
 
-        fetch(`http://localhost:5000/addcraft/${_id}`, {
+        fetch(`https://earthy-crafts-server.vercel.app/addcraft/${_id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'

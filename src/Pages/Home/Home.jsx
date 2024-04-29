@@ -27,7 +27,7 @@ const Home = () => {
     return (
         <div>
             <Helmet>
-                <title>EP || Home</title>
+                <title>Home</title>
 
             </Helmet>
 

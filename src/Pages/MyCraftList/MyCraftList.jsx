@@ -16,7 +16,7 @@ const MyCraftList = () => {
 
 
     useEffect(() => {
-        fetch(`http://localhost:5000/myCart/${user?.email}`)
+        fetch(`https://earthy-crafts-server.vercel.app/myCart/${user?.email}`)
             .then(res => res.json())
             .then(data => {
                 setMyCartData(data)
@@ -38,7 +38,7 @@ const MyCraftList = () => {
         }).then((result) => {
             if (result.isConfirmed) {
 
-                fetch(`http://localhost:5000/addcraft/${id}`, {
+                fetch(`https://earthy-crafts-server.vercel.app/addcraft/${id}`, {
                     method: "DELETE",
 
                 })

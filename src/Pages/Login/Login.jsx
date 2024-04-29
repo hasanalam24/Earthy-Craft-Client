@@ -28,7 +28,7 @@ const Login = () => {
 
 
                 }
-                fetch('http://localhost:5000/addcraft', {
+                fetch('https://earthy-crafts-server.vercel.app/addcraft', {
                     method: 'PATCH',
                     headers: {
                         'content-type': 'application/json'

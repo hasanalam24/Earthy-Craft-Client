@@ -29,12 +29,12 @@ const router = createBrowserRouter([
       {
         path: '/',
         element: <Home></Home>,
-        loader: () => fetch('http://localhost:5000/addcraft')
+        loader: () => fetch('https://earthy-crafts-server.vercel.app/addcraft')
       },
       {
         path: '/allartcraft',
         element: <AllCraftsItems></AllCraftsItems>,
-        loader: () => fetch('http://localhost:5000/addcraft')
+        loader: () => fetch('https://earthy-crafts-server.vercel.app/addcraft')
       },
       {
         path: '/addcraft',
@@ -52,7 +52,7 @@ const router = createBrowserRouter([
       {
         path: '/updatedInfo/:id',
         element: <UpdatedData></UpdatedData>,
-        loader: ({ params }) => fetch(`http://localhost:5000/addcraft/${params.id}`)
+        loader: ({ params }) => fetch(`https://earthy-crafts-server.vercel.app/addcraft/${params.id}`)
       },
       {
         path: '/login',
@@ -67,7 +67,7 @@ const router = createBrowserRouter([
         element: <ProtectedRoute>
           <ViewDetails></ViewDetails>
         </ProtectedRoute>,
-        loader: ({ params }) => fetch(`http://localhost:5000/viewDetails/${params.id}`)
+        loader: ({ params }) => fetch(`https://earthy-crafts-server.vercel.app/viewDetails/${params.id}`)
       },
     ]
   },
