@@ -66,7 +66,7 @@ const router = createBrowserRouter([
         element: <ProtectedRoute>
           <ViewDetails></ViewDetails>
         </ProtectedRoute>,
-        loader: ({ params }) => fetch(`http://localhost:5000//viewDetails/${params.id}`)
+        loader: ({ params }) => fetch(`http://localhost:5000/viewDetails/${params.id}`)
       },
     ]
   },
