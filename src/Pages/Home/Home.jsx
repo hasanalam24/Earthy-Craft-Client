@@ -167,9 +167,13 @@ const Home = () => {
 
 
             </div>
+            <div className='mt-10 mb-5'>
+                <h1 className="border-l-2 border-l-orange-600 pl-4 text-xl font-semibold mb-5">Categories Items</h1>
 
+
+            </div>
             {/* homeSixcard */}
-            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>
+            <div className='grid gap-5 rounded-lg grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>
 
                 {
                     allCrafts.slice(0, 6).map(craft => <HomeCard craft={craft} key={craft._id}></HomeCard>)
@@ -178,11 +182,7 @@ const Home = () => {
 
 
             {/* another craft items */}
-            <div className='mt-10 mb-10'>
-                <h1 className="border-l-2 border-l-orange-600 pl-4 text-xl font-semibold mb-5">Categories</h1>
 
-
-            </div>
         </div >
     );
 };
