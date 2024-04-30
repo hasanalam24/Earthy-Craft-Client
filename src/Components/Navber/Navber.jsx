@@ -74,7 +74,7 @@ const Navber = () => {
                         <button onClick={handleSignOut} className="btn btn-secondary">Sign Out</button>
                     </div>
                         :
-                        <div>
+                        <div className="space-x-2 mr-">
                             <Link to="/login">
                                 <button className="btn btn-primary">Login</button>
                             </Link>
