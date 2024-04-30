@@ -1,6 +1,8 @@
 import { IoLogoFacebook } from "react-icons/io5";
 import { MdEmail } from "react-icons/md";
 import { FaInstagramSquare } from "react-icons/fa";
+import { FaPhoneVolume } from "react-icons/fa6";
+import { FaLocationDot } from "react-icons/fa6";
 
 const Footer = () => {
     return (
@@ -13,6 +15,7 @@ const Footer = () => {
                         </div>
                         <span className="self-center text-2xl font-semibold">Earthy Paint</span>
                     </a>
+
                 </div>
                 <div className="grid grid-cols-2 text-sm gap-x-3 gap-y-8 lg:w-2/3 sm:grid-cols-4">
                     <div className="space-y-3">
@@ -69,6 +72,12 @@ const Footer = () => {
                             <a target="_blank" rel="noopener noreferrer" href="copied_username0" title="Instagram" className="flex items-center p-1">
                                 <FaInstagramSquare className="text-xl"></FaInstagramSquare>
                             </a>
+
+                        </div>
+                        <div>
+                            <h3 className="opacity-75 mt-5 space-y-2 mb-1">Contact Us: </h3>
+                            <p className="flex gap-3"> <FaPhoneVolume className="text-lg"></FaPhoneVolume> 01920259209</p>
+                            <p className="flex gap-3"><FaLocationDot className="text-xl"></FaLocationDot> Dhaka,Bangladesh</p>
                         </div>
                     </div>
                 </div>
