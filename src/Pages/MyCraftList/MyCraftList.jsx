@@ -72,7 +72,10 @@ const MyCraftList = () => {
                     <figure><img src={cartData?.image} alt="Shoes" /></figure>
                     <div className="card-body">
                         <h2 className="card-title">{cartData.itemName}</h2>
-                        <p>If a dog chews shoes whose shoes does he choose?</p>
+                        <p>{cartData.price}</p>
+                        <p>{cartData.rating}</p>
+                        <p>{cartData.customization}</p>
+                        <p>{cartData.stockStatus}</p>
                         <div className="card-actions flex gap-3">
                             <button onClick={() => handleDeleted(cartData._id)} className="btn btn-primary">Delete</button>
                             <Link to={`/updatedInfo/${cartData._id}`}>
