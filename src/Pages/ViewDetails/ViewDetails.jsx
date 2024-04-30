@@ -19,7 +19,7 @@ const ViewDetails = () => {
 
             </Helmet>
             <div className="flex-1">
-                <figure><img className="w-full h-[400px]" src={image} alt="" /></figure>
+                <figure><img className="w-full h-[250px] rounded-xl md:h-[350px] lg:h-[400px]" src={image} alt="" /></figure>
             </div>
             <div className="space-y-2 flex-1">
                 <h2 className="text-xl font-semibold"><span className="opacity-75">Name:</span> <span className="text-purple-600">{itemName}</span></h2>
