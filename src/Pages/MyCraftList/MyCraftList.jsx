@@ -67,31 +67,33 @@ const MyCraftList = () => {
 
             </Helmet>
 
-            {
-                myCartData.map(cartData => <div key={cartData._id} className="card card-compact w-96 bg-base-100 shadow-xl">
-                    <figure><img src={cartData?.image} alt="Shoes" /></figure>
-                    <div className="card-body">
-                        <h2 className="card-title">Name: {cartData.itemName}</h2>
-                        <p>Price:{cartData.price}</p>
-                        <div className="flex gap-5">
-                            <p className="font-medium opacity-80">Price: <span className="text-orange-900 font-medium">{cartData.price}</span> </p>
-                            <p className="font-medium opacity-80">Ratings: <span className="text-orange-900 font-medium">{cartData.rating}</span> </p>
-                        </div>
-                        <div className="flex gap-5">
-                            <p className="font-medium opacity-80">Customization: <span className="text-green-500
+            <div className="grid gap-5 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 w-[95%] mx-auto">
+                {
+                    myCartData.map(cartData => <div key={cartData._id} className="card card-compact  bg-base-100 shadow-xl">
+                        <figure><img className="w-[400px] h-[200px]" src={cartData?.image} alt="Shoes" /></figure>
+                        <div className="card-body">
+                            <h2 className="card-title">Name: {cartData.itemName}</h2>
+
+                            <div className="flex gap-5">
+                                <p className="font-medium opacity-80">Price: <span className="text-orange-900 font-medium">{cartData.price}</span> </p>
+                                <p className="font-medium opacity-80">Ratings: <span className="text-orange-900 font-medium">{cartData.rating}</span> </p>
+                            </div>
+                            <div className="flex gap-5">
+                                <p className="font-medium opacity-80">Customization: <span className="text-green-500
  font-medium">{cartData.customization}</span> </p>
+                                <p className="font-medium opacity-80">Stock Status: <span className="text-green-600">{cartData.stockStatus}</span></p>
+                            </div>
 
+
+                            <button onClick={() => handleDeleted(cartData._id)} className="text-white btn bg-red-600">Delete</button>
+                            <Link to={`/updatedInfo/${cartData._id}`}>
+                                <button className="btn btn-secondary w-full">Updated</button>
+                            </Link>
                         </div>
-
-                        <p className="font-medium opacity-80">Stock Status: <span className="text-green-600">{cartData.stockStatus}</span></p>
-                        <button onClick={() => handleDeleted(cartData._id)} className="btn btn-primary">Delete</button>
-                        <Link to={`/updatedInfo/${cartData._id}`}>
-                            <button className="btn btn-primary">Updated</button>
-                        </Link>
                     </div>
-                </div>
-                )
-            }
+                    )
+                }
+            </div>
         </div >
     );
 };
