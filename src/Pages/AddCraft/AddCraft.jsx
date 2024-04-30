@@ -58,7 +58,7 @@ const AddCraft = () => {
             </div>
             <div className=" w-[90%] mx-auto flex-col absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] shrink-0 shadow-2xl">
                 <div className="text-center">
-                    <h1 className="text-5xl text-white font-bold">Add Art And Craft Items</h1>
+                    <h1 className="text-3xl mt-10 lg:text-5xl text-white font-bold">Add Art And Craft Items</h1>
 
                 </div>
                 <div className="">
@@ -171,7 +171,8 @@ const AddCraft = () => {
 
 
                         <div className="form-control mt-6">
-                            <button className="btn btn-primary">Add Craft</button>
+                            <button className="btn btn-secondary">Add Craft</button>
+
                         </div>
                     </form>
                 </div>
