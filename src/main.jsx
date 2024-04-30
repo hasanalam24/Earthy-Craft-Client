@@ -18,6 +18,7 @@ import ErrorPage from './Components/ErrorElement/ErrorPage.jsx';
 import ViewDetails from './Pages/ViewDetails/ViewDetails.jsx';
 import UpdatedData from './Pages/UpdatedData/UpdatedData.jsx';
 import { HelmetProvider } from 'react-helmet-async';
+import Category from './Components/Category/Category.jsx';
 
 
 const router = createBrowserRouter([
@@ -35,6 +36,11 @@ const router = createBrowserRouter([
         path: '/allartcraft',
         element: <AllCraftsItems></AllCraftsItems>,
         loader: () => fetch('https://earthy-crafts-server.vercel.app/addcraft')
+      },
+      {
+        path: '/subCategory/:catName',
+        element: <Category></Category>,
+        loader: ({ params }) => fetch(`https://earthy-crafts-server.vercel.app/subCategory/${params.catName}`)
       },
       {
         path: '/addcraft',

@@ -10,7 +10,7 @@ const HomeCard = ({ craft }) => {
                 <div className="flex flex-col gap-5">
                     <figure><img className="w-[250px] h-[100px]" src={craft.image} alt="Shoes" /></figure>
                     <div className="">
-                        <Link to={`/viewDetails/${craft._id}`}>
+                        <Link to={`/subCategory/${craft.subCategory}`}>
                             <a className="relative p-2 overflow-hidden font-medium text-gray-600 bg-gray-100 border border-gray-100 rounded-lg shadow-inner group">
                                 <span className="absolute top-0 left-0 w-0 h-0 transition-all duration-200 border-t-2 border-gray-600 group-hover:w-full ease"></span>
                                 <span className="absolute bottom-0 right-0 w-0 h-0 transition-all duration-200 border-b-2 border-gray-600 group-hover:w-full ease"></span>
@@ -25,7 +25,7 @@ const HomeCard = ({ craft }) => {
                 <div className="">
                     <h2 className="font-medium">{craft.subCategory}</h2>
                     <div className="">
-                        <p>Rating: <span className="text-green-600 font-medium">{craft.rating}</span></p>
+
                         <p>StockStatus: <span className="text-purple-600 font-medium">{craft.stockStatus}</span></p>
                     </div>
                     <p><span className="font-medium">Description:</span> {

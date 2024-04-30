@@ -168,7 +168,7 @@ const Home = () => {
 
             </div>
             <div className='mt-10 mb-5'>
-                <h1 className="border-l-2 border-l-orange-600 pl-4 text-xl font-semibold mb-5">Categories Items</h1>
+                <h1 className="border-l-2 border-l-orange-600 pl-4 text-xl font-semibold mb-5">Art & Craft Categories</h1>
 
 
             </div>
