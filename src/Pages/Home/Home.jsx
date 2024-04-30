@@ -17,6 +17,7 @@ import { EffectFade, Navigation, Pagination } from 'swiper/modules';
 import { useLoaderData } from 'react-router-dom';
 import HomeCard from '../../Components/HomeCard/HomeCard';
 import { Helmet } from 'react-helmet-async';
+import WhoChoise from '../../Components/WhoChoise/WhoChoise';
 
 
 
@@ -191,7 +192,9 @@ const Home = () => {
             </div>
 
 
-            {/* another craft items */}
+            <div>
+                {/* <WhoChoise></WhoChoise> */}
+            </div>
 
         </div >
     );
