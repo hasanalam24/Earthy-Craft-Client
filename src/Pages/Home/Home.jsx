@@ -48,8 +48,8 @@ const Home = () => {
                     <img className='' src="https://i.ibb.co/12qw1VJ/alexandra-gorn-JIUjvqe2-ZHg-unsplash.jpg" />
 
                     <div className='absolute top-1/2 left-1/2 -translate-x-1/2 translate-y-[-40%] gap-2'>
-                        <h2 className='text-4xl font-semibold text-black'>Furniture & Sculptures:</h2>
-                        <span className=' text-4xl font-semibold'>
+                        <h2 className='text-2xl lg:text-4xl font-semibold text-black'>Furniture & Sculptures:</h2>
+                        <span className='text-2xl lg:text-4xl font-semibold'>
 
                             <Typewriter
                                 words={['Best Modern Wood Collection']}
@@ -127,43 +127,53 @@ const Home = () => {
                 </SwiperSlide>
             </Swiper>
 
-            <div className='mt-10 mb-10 flex justify-between'>
-                <div className='flex items-center justify-center gap-5'>
-                    <LiaShippingFastSolid className='text-6xl '></LiaShippingFastSolid>
-                    <div className='flex flex-col'>
-                        <h4 className='font-semibold'>
-                            Free Ship Worldwide
-                        </h4>
-                        <p>If you are unable</p>
+            <div className='mt-10 mb-10 lg:w-[95%] mx-auto space-y-3 lg:flex lg:border-2 lg:p-5'>
+                <div className='w-3/4 lg:ml-10 mx-auto space-y-3 lg:flex '>
+                    <div className='flex gap-5'>
+                        <div className='flex items-center justify-center gap-5'>
+                            <LiaShippingFastSolid className='text-6xl '></LiaShippingFastSolid>
+                            <div className='flex flex-col'>
+                                <h4 className='font-semibold'>
+                                    Free Ship Worldwide
+                                </h4>
+                                <p>If you are unable</p>
+                            </div>
+                        </div>
+                        <div className='flex items-center justify-center gap-5'>
+                            <CiDiscount1 className='text-6xl'></CiDiscount1>
+                            <div className='flex flex-col'>
+                                <h4 className='font-semibold'>
+                                    Save 20% When You
+                                </h4>
+                                <p>If you are unable</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div className='w-3/4 mx-auto space-y-3 lg:flex lg:gap-5'>
+                    <div className='flex gap-5'>
+                        <div className='flex items-center justify-center gap-5'>
+                            <SiClockify className='text-6xl'></SiClockify>
+                            <div className='flex flex-col'>
+                                <h4 className='font-semibold'>
+                                    24/7 Customer Care
+                                </h4>
+                                <p>If you are unable</p>
+                            </div>
+                        </div>
+                        <div className='flex items-center justify-center gap-5'>
+                            <SiMoneygram className='text-6xl'></SiMoneygram>
+                            <div className='flex flex-col'>
+                                <h4 className='font-semibold'>
+                                    Money Back Guarante
+                                </h4>
+                                <p>If you are unable</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div className='flex items-center justify-center gap-5'>
-                    <CiDiscount1 className='text-6xl'></CiDiscount1>
-                    <div className='flex flex-col'>
-                        <h4 className='font-semibold'>
-                            Save 20% When You
-                        </h4>
-                        <p>If you are unable</p>
-                    </div>
-                </div>
-                <div className='flex items-center justify-center gap-5'>
-                    <SiClockify className='text-6xl'></SiClockify>
-                    <div className='flex flex-col'>
-                        <h4 className='font-semibold'>
-                            24/7 Customer Care
-                        </h4>
-                        <p>If you are unable</p>
-                    </div>
-                </div>
-                <div className='flex items-center justify-center gap-5'>
-                    <SiMoneygram className='text-6xl'></SiMoneygram>
-                    <div className='flex flex-col'>
-                        <h4 className='font-semibold'>
-                            Money Back Guarante
-                        </h4>
-                        <p>If you are unable</p>
-                    </div>
-                </div>
+
 
 
             </div>
